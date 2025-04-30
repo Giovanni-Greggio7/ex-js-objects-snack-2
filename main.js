@@ -25,7 +25,7 @@ console.log(secondBurger.ingredients[0]); // Salad
 
 // P.S.: Ricordati che gli Array, come gli oggetti, sono dei Reference Type (Tipi di Riferimento)!
 // Senza lanciare il codice, riesci a prevedere cosa viene stampato in console? Si
-// Quanti oggetti sono stati creati in memoria durante l'esecuzione di questo codice? 3, ma l'oggetto annidato rimane come reference
+// Quanti oggetti sono stati creati in memoria durante l'esecuzione di questo codice? 3, l'oggetto annidato rimane come reference
 
 
 // 🏆 Code Question 3
@@ -46,26 +46,27 @@ const hamburger = {
 const secondBurger = structuredClone(hamburger);
 const thirdBurger = structuredClone(hamburger);
 // Quanti oggetti sono stati creati in memoria durante l'esecuzione di questo codice? 9
+
 // 🏆 Code Question 4
-// const chef = {
-//     name: "Chef Hyur",
-//     age: 29,
-//     makeBurger: (num = 1) => {
-//         console.log(`Ecco ${num} hamburger per te!`);
-//     },
-// }
-// ​
-// const restaurant = {
-//     name: "Hyur's Burgers",
-//     address: {
-//         street: 'Main Street',
-//         number: 123,
-//     },
-//     openingDate: new Date(2025, 3, 11),
-//     isOpen: false,
-// };
-// Qual è il metodo migliore per clonare l’oggetto chef, e perché?
-// Qual è il metodo migliore per clonare l’oggetto restaurant, e perché?
+const chef = {
+    name: "Chef Hyur",
+    age: 29,
+    makeBurger: (num = 1) => {
+        console.log(`Ecco ${num} hamburger per te!`);
+    },
+}
+​
+const restaurant = {
+    name: "Hyur's Burgers",
+    address: {
+        street: 'Main Street',
+        number: 123,
+    },
+    openingDate: new Date(2025, 3, 11),
+    isOpen: false,
+};
+// Qual è il metodo migliore per clonare l’oggetto chef, e perché? Spread Operator, perché duplica il primo livello di proprietà e funzioni
+// Qual è il metodo migliore per clonare l’oggetto restaurant, e perché? structuredClone, perché duplica anche oggetti complessi
 // 🎯 Code Question 5 (Bonus)
 // const hamburger = { 
 //     name: "Cheese Burger", 
