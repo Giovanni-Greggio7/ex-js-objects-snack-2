@@ -97,13 +97,13 @@ console.log(secondBurger.maker.restaurant.name); // Hyur's II
 // Senza lanciare il codice, riesci a prevedere cosa viene stampato in console? Si
 // Quanti oggetti sono stati creati in memoria durante l'esecuzione di questo codice? 5
 
-// 🎯 Code Question 6 (Bonus)
+//! 🎯 Code Question 6 (Bonus)
 
 const chef = {
     name: "Chef Hyur",
     age: 29,
     makeBurger: (num = 1) => {
-        console.log(`Ecco ${num} hamburger per te!`);
+        console.log(Ecco ${num} hamburger per te!);
     },
     restaurant: {
         name: "Hyur's Burgers",
@@ -121,7 +121,22 @@ const chef = {
     }
 }
 
-//Qual è il metodo migliore per clonare l’oggetto chef, e perché?
+const copyChef = {
+    ...chef,
+    restaurant: {
+        ...chef.restaurant,
+        address: {
+            ...chef.restaurant.address,
+        }
+    },
+}
+
+copyChef.restaurant.address.street = "via Verdi"
+
+console.log(copyChef)
+console.log(chef)
+// Qual è il metodo migliore per clonare l’oggetto chef, e perché? Spread Operator annidato
+
 // 🎯 Snack  (Bonus)
 // Crea una funzione che permette la copia profonda (deep copy) di un oggetto, che copia anche i suoi metodi (proprietà che contengono funzioni). Usa l’oggetto di Code Question 6 come test.
 
